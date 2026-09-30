@@ -30,7 +30,7 @@
 3. تاريخ تطبيق MCP موجود في CLOUD_STATUS_AR.md. الملفات القديمة ليست داخل مجلد migrations القياسي؛ لا تستخدم `supabase db push` قبل توحيد تاريخ الهجرات، لأنه لن ينفذ 001–003 الموجودة خارجه.
 
 ما بقي على المشروع الحالي:
-1. فحص 30 سبتمبر أكد Email=true وdisable_signup=false: أوقف Allow new users to sign up. راجع TOTP Enrollment/Verification من لوحة Authentication؛ هذه القيم لم يمكن التحقق منها في استجابة settings العامة. المستخدمون يضيفهم المدير.
+1. آخر فحص في 30 سبتمبر أكد Email=true وdisable_signup=true: التسجيل العام مغلق الآن؛ اترك Allow new users to sign up معطلًا. راجع TOTP Enrollment/Verification من لوحة Authentication؛ هذه القيم لم يمكن التحقق منها في استجابة settings العامة. المستخدمون يضيفهم المدير.
 2. من إعدادات API keys خذ Publishable وSecret، وأدخلهما مباشرة في البيئة المحلية أو Render. رابط API هو `https://rxqlccksknrjysluzgkt.supabase.co` وليس رابط الموقع.
 3. حساب المدير الأول أُنشئ وربط بالفعل. استخدم معرّف الدخول المتفق عليه وكلمة المرور التي اخترتها، ثم اختبر Authenticator فعليًا. لا تعِد إنشاء الحساب نفسه.
 

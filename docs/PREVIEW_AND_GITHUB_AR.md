@@ -12,7 +12,7 @@ https://rxqlccksknrjysluzgkt.supabase.co هو عنوان خدمات Supabase. ف
 
 افتح https://supabase.com/dashboard واختر مشروع Autonomous Maritime Surveillance UAV:
 
-1. داخل Authentication ابحث عن إعداد **Allow new users to sign up** ضمن إعدادات Sign In / Providers أو General Configuration، وأوقفه ثم احفظ. الاسم مهم لأن ترتيب القوائم قد يتغير. الفحص الحالي أثبت أن التسجيل العام مفتوح.
+1. داخل Authentication ابحث عن إعداد **Allow new users to sign up** ضمن إعدادات Sign In / Providers أو General Configuration، وأوقفه ثم احفظ. الاسم مهم لأن ترتيب القوائم قد يتغير. آخر فحص أكد أن التسجيل العام أصبح مغلقًا؛ اتركه كذلك.
 2. اترك تسجيل الدخول بالبريد/كلمة المرور مفعّلًا. الواجهة ستستخدم ID، والخادم يحوّله داخليًا إلى البريد.
 3. في إعدادات Multi-Factor Authentication راجع **TOTP Enrollment** و**TOTP Verification** واجعلهما مفعّلين. لا تُلغ شرط AAL2 في الكود أو RLS.
 
