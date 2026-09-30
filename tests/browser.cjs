@@ -1,11 +1,12 @@
-/* Live UI contract tests. Network is deliberately mocked; never ships mock data into index.html. */
+/* Live UI contract tests. Network is deliberately mocked; never ships mock data into index.html.
+   Use full Chromium new headless mode in CI; retain executable override for portable local runs. */
 const fs=require('fs'),path=require('path'),http=require('http'),crypto=require('crypto'),assert=require('assert/strict');
 const {chromium}=require(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES?process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES+'/playwright':'playwright');
 const root=path.resolve(__dirname,'..'),results=[],errors=[];
 const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const configured=html.replace("phase2ApiUrl: '',","phase2ApiUrl: 'https://api.unit.test',").replace('websocketEnabled: true','websocketEnabled: false');
 function totp(){const buf=Buffer.alloc(8);buf.writeBigUInt64BE(BigInt(Math.floor(Date.now()/30000)));const h=crypto.createHmac('sha1',Buffer.from('12345678901234567890')).update(buf).digest();const i=h[19]&15;return ((h.readUInt32BE(i)&0x7fffffff)%1000000).toString().padStart(6,'0')}
-(async()=>{const server=http.createServer((q,r)=>{r.setHeader('Content-Type','text/html; charset=utf-8');r.end(q.url==='/unconfigured'?html:configured)});await new Promise(r=>server.listen(8770,'127.0.0.1',r));const launch={headless:true};if(process.env.CHROMIUM_EXECUTABLE){launch.executablePath=process.env.CHROMIUM_EXECUTABLE;launch.args=['--no-sandbox','--disable-dev-shm-usage','--disable-gpu-sandbox'];}const browser=await chromium.launch(launch);const context=await browser.newContext({viewport:{width:1440,height:1000}});const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
+(async()=>{const server=http.createServer((q,r)=>{r.setHeader('Content-Type','text/html; charset=utf-8');r.end(q.url==='/unconfigured'?html:configured)});await new Promise(r=>server.listen(8770,'127.0.0.1',r));const launch={headless:true};if(process.env.CHROMIUM_EXECUTABLE){launch.executablePath=process.env.CHROMIUM_EXECUTABLE;launch.args=['--no-sandbox','--disable-dev-shm-usage','--disable-gpu-sandbox'];}else{launch.channel='chromium';}const browser=await chromium.launch(launch);const context=await browser.newContext({viewport:{width:1440,height:1000}});const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
 let expirySweep=true;
 let stage='none',enrolled=false,failNetwork=false,stale=false,unknownGps=false,wrongMfa=0,imageFailure=false;
 let events=[],calls=[],users=[{id:'admin-id',display_name:'مدير العمليات',role:'admin',active:true}];const iso=x=>new Date(x).toISOString();
