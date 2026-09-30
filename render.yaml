@@ -1,0 +1,28 @@
+# Review region and billing plan in Render before creating this Blueprint.
+services:
+  - type: web
+    name: maritime-operations
+    runtime: docker
+    region: frankfurt
+    plan: starter
+    numInstances: 1
+    dockerfilePath: ./deploy/Dockerfile
+    dockerContext: .
+    branch: main
+    autoDeployTrigger: checksPass
+    healthCheckPath: /health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SECRET_KEY
+        sync: false
+      - key: SUPABASE_PUBLISHABLE_KEY
+        sync: false
+      - key: INGEST_API_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: FORWARDED_ALLOW_IPS
+        sync: false

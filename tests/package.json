@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "description": "Development-only validation tools; the website requires no npm build",
+  "devDependencies": {
+    "playwright": "1.62.1",
+    "@electric-sql/pglite": "0.5.8"
+  }
+}

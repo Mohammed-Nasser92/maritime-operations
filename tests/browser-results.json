@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Unconfigured production page has no dashboard/demo/account bypass",
+    "status": "PASS"
+  },
+  {
+    "name": "Wrong password keeps the workspace locked",
+    "status": "PASS"
+  },
+  {
+    "name": "First login requires authenticator enrollment without operational requests",
+    "status": "PASS"
+  },
+  {
+    "name": "Invalid authenticator code is rejected and dashboard stays locked",
+    "status": "PASS"
+  },
+  {
+    "name": "Verified ID + TOTP enters admin dashboard and removes enrollment secret",
+    "status": "PASS"
+  },
+  {
+    "name": "Target marker and drone marker use independent coordinates",
+    "status": "PASS"
+  },
+  {
+    "name": "Accept saves status and does not turn suspect detection into confirmed identity",
+    "status": "PASS"
+  },
+  {
+    "name": "Event details show original JSON, target accuracy and drone snapshot",
+    "status": "PASS"
+  },
+  {
+    "name": "Archive is a separate route with search and filter controls",
+    "status": "PASS"
+  },
+  {
+    "name": "Tracking has GPS fields and geographic map, zero coordinate is valid",
+    "status": "PASS"
+  },
+  {
+    "name": "Geographic distance is labelled and computes reasonable metres",
+    "status": "PASS"
+  },
+  {
+    "name": "Stale telemetry disables command requests",
+    "status": "PASS"
+  },
+  {
+    "name": "New user flow provisions admin with a login ID",
+    "status": "PASS"
+  },
+  {
+    "name": "Expired review disables decisions without browser inventing a final status",
+    "status": "PASS"
+  },
+  {
+    "name": "Reject persists rejected state",
+    "status": "PASS"
+  },
+  {
+    "name": "Service failure freezes decisions and shows connection warning",
+    "status": "PASS"
+  },
+  {
+    "name": "Payload text is escaped rather than executed",
+    "status": "PASS"
+  },
+  {
+    "name": "Mobile layout has no document overflow",
+    "status": "PASS"
+  },
+  {
+    "name": "320px layout keeps the page inside viewport",
+    "status": "PASS"
+  },
+  {
+    "name": "Logout clears tokens, secret and private UI; hash cannot restore session",
+    "status": "PASS"
+  },
+  {
+    "name": "Subsequent login challenges existing factor without reenrollment",
+    "status": "PASS"
+  },
+  {
+    "name": "Page refresh does not restore a cached authenticated session",
+    "status": "PASS"
+  },
+  {
+    "name": "No browser requests to Supabase Auth or database",
+    "status": "PASS"
+  },
+  {
+    "name": "No uncaught browser errors",
+    "status": "PASS"
+  }
+]

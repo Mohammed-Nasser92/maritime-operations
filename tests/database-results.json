@@ -1,0 +1,174 @@
+[
+  {
+    "name": "Migration executes atomically on PostgreSQL engine",
+    "status": "PASS"
+  },
+  {
+    "name": "Independent-server migration executes on PostgreSQL",
+    "status": "PASS"
+  },
+  {
+    "name": "New event starts pending with server-owned 20-second deadline",
+    "status": "PASS"
+  },
+  {
+    "name": "Operator can read authorized events",
+    "status": "PASS"
+  },
+  {
+    "name": "Operator cannot update event directly",
+    "status": "PASS"
+  },
+  {
+    "name": "Operator cannot promote own role",
+    "status": "PASS"
+  },
+  {
+    "name": "Operator cannot call service-only decision RPC",
+    "status": "PASS"
+  },
+  {
+    "name": "Operator cannot read other profile or audit",
+    "status": "PASS"
+  },
+  {
+    "name": "Anonymous cannot read events",
+    "status": "PASS"
+  },
+  {
+    "name": "Review records accepted with verified actor and timestamp",
+    "status": "PASS"
+  },
+  {
+    "name": "Same actor same decision is idempotent; different decision conflicts",
+    "status": "PASS"
+  },
+  {
+    "name": "Final-state protection applies even to accidental direct backend UPDATE",
+    "status": "PASS"
+  },
+  {
+    "name": "Stale version fails without finalizing pending record",
+    "status": "PASS"
+  },
+  {
+    "name": "Early timeout is rejected",
+    "status": "PASS"
+  },
+  {
+    "name": "Expired manual decision produces persisted timeout and conflict",
+    "status": "PASS"
+  },
+  {
+    "name": "Background sweep expires due events once without any browser",
+    "status": "PASS"
+  },
+  {
+    "name": "Audit records one final decision per event",
+    "status": "PASS"
+  },
+  {
+    "name": "Storage RLS exposes linked images only",
+    "status": "PASS"
+  },
+  {
+    "name": "Only admin can change membership; self-disable is blocked",
+    "status": "PASS"
+  },
+  {
+    "name": "Disabled user loses event and image reads",
+    "status": "PASS"
+  },
+  {
+    "name": "Command records queued; identical retry returns same request",
+    "status": "PASS"
+  },
+  {
+    "name": "Same request key with altered body conflicts",
+    "status": "PASS"
+  },
+  {
+    "name": "Unlisted command is denied",
+    "status": "PASS"
+  },
+  {
+    "name": "Stale telemetry prevents command request",
+    "status": "PASS"
+  },
+  {
+    "name": "Event ingestion creates mission/track/event and preserves uncertain classification",
+    "status": "PASS"
+  },
+  {
+    "name": "Identical ingest retry preserves review deadline; changed duplicate is rejected",
+    "status": "PASS"
+  },
+  {
+    "name": "Telemetry rejects older sample instead of overwriting current state",
+    "status": "PASS"
+  },
+  {
+    "name": "WebSocket ticket can be consumed once only",
+    "status": "PASS"
+  },
+  {
+    "name": "Expired WebSocket ticket is denied",
+    "status": "PASS"
+  },
+  {
+    "name": "Role promotion requires administrator; self role changes are denied",
+    "status": "PASS"
+  },
+  {
+    "name": "Command claiming is one-time and acknowledgement follows ordered transitions",
+    "status": "PASS"
+  },
+  {
+    "name": "Live migration installs ID, AAL2 policies and telemetry extensions",
+    "status": "PASS"
+  },
+  {
+    "name": "Advisor hardening moves helpers and preserves policy dependencies",
+    "status": "PASS"
+  },
+  {
+    "name": "Password-only admin cannot read any events/profiles/images/history",
+    "status": "PASS"
+  },
+  {
+    "name": "AAL1 can inspect only its authenticated session assurance",
+    "status": "PASS"
+  },
+  {
+    "name": "Login ID mapping and rate data cannot be read by authenticated users",
+    "status": "PASS"
+  },
+  {
+    "name": "Verified AAL2 admin can read authorized records",
+    "status": "PASS"
+  },
+  {
+    "name": "Disabled AAL2 account still cannot read data",
+    "status": "PASS"
+  },
+  {
+    "name": "Persistent login limiter denies excess attempts",
+    "status": "PASS"
+  },
+  {
+    "name": "Expanded telemetry stores history and preserves missing values",
+    "status": "PASS"
+  },
+  {
+    "name": "Target coordinates and drone GPS snapshot remain independent",
+    "status": "PASS"
+  },
+  {
+    "name": "Old internal telemetry function is not exposed to service role",
+    "status": "PASS"
+  },
+  {
+    "name": "Case-normalized unique login ID is enforced",
+    "status": "PASS"
+  }
+]

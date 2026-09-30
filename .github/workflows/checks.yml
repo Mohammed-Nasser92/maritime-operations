@@ -1,0 +1,27 @@
+name: checks
+on:
+  push:
+    branches: [main, development]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install -r server/requirements.txt -r tests/requirements.txt
+      - run: python build_frontend.py && git diff --exit-code -- index.html
+      - run: pytest tests -q
+      - run: npm ci --prefix tests
+      - run: npx --prefix tests playwright install --with-deps chromium
+      - run: node tests/database.cjs
+      - run: node tests/browser.cjs
+      - run: docker build -f deploy/Dockerfile -t maritime-ci .
